@@ -1,24 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
-
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import "./App.css";
+import Deals from "./components/Deals";
+import Feature from "./components/Features";
+import Footer from "./components/Footer";
+import Hero from "./components/Hero";
+import Pizzas from "./components/Pizzas";
+import Products from "./components/Products";
+import { productData, productDataTwo } from "./components/Products/Data";
+import { GlobalStyle } from "./globalStyles";
+import { dealData } from "./components/Deals/data";
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Switch>
+        <Route path="/pizzas">
+          <GlobalStyle></GlobalStyle>
+          <Pizzas></Pizzas>
+          <Products heading="Choose your favorite" data={productData} />
+          <Footer />
+        </Route>
+        <Route path="/">
+          <GlobalStyle></GlobalStyle>
+          <Hero></Hero>
+          <Deals data={dealData} />
+          <Feature />
+          <Products heading="Sweet Treats For You" data={productDataTwo} />
+          <Footer />
+        </Route>
+      </Switch>
+    </Router>
   );
 }
 
