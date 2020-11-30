@@ -9,6 +9,7 @@ import Products from "./components/Products";
 import { productData, productDataTwo } from "./components/Products/Data";
 import { GlobalStyle } from "./globalStyles";
 import { dealData } from "./components/Deals/data";
+import Cart from "./components/Cart";
 function App() {
   return (
     <Router>
@@ -17,6 +18,11 @@ function App() {
           <GlobalStyle></GlobalStyle>
           <Pizzas></Pizzas>
           <Products heading="Choose your favorite" data={productData} />
+          <Footer />
+        </Route>
+        <Route path="/cart">
+          <GlobalStyle></GlobalStyle>
+          <Cart />
           <Footer />
         </Route>
         <Route path="/">

@@ -19,6 +19,7 @@ function Sidebar({ isOpen, toggle }) {
         <SidebarLink to="/pizzas">Pizzas</SidebarLink>
         <SidebarLink to="/">Desserts</SidebarLink>
         <SidebarLink to="/">Full Menu</SidebarLink>
+        <SidebarLink to="/cart">Cart</SidebarLink>
       </SidebarMenu>
       <SideBtnWrap>
         <SidebarRoute to="/">Order Now</SidebarRoute>
